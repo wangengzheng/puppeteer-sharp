@@ -1,0 +1,360 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>c3d9cf32-0136-41c7-95bf-b38024173cdb</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <!-- 可编辑view -->
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <RazorCompileOnPublish>false</RazorCompileOnPublish>
+  </PropertyGroup>  
+  
+  <ItemGroup>
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\MEIPreload\manifest.json" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\product_logo_48.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\devtools_app.html" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-horizontal-default-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-horizontal-default-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-horizontal-keyboard-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-horizontal-keyboard-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-horizontal-navigation-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-horizontal-navigation-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-vertical-default-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-vertical-default-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-vertical-keyboard-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-vertical-keyboard-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-vertical-navigation-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5-vertical-navigation-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-horizontal-default-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-horizontal-default-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-horizontal-keyboard-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-horizontal-keyboard-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-horizontal-navigation-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-horizontal-navigation-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-vertical-default-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-vertical-default-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-vertical-keyboard-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-vertical-keyboard-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-vertical-navigation-1x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\google-nexus-5x-vertical-navigation-2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\accelerometer-bottom.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\accelerometer-left.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\accelerometer-right.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\accelerometer-top.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\breakpoint.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\breakpointConditional.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\breakpointConditional_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\breakpoint_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\checker.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\chromeDisabledSelect.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\chromeDisabledSelect_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\chromeLeft.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\chromeMiddle.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\chromeRight.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\chromeSelect.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\chromeSelect_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\errorWave.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\errorWave_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\largeIcons.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\largeIcons_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\mediumIcons.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\mediumIcons_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\navigationControls.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\navigationControls_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\nodeIcon.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\popoverArrows.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\profileGroupIcon.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\profileIcon.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\profileSmallIcon.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\radioDot.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resizeDiagonal.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resizeDiagonal_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resizeHorizontal.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resizeHorizontal_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resizeVertical.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resizeVertical_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resourceCSSIcon.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resourceDocumentIcon.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resourceDocumentIconSmall.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resourceJSIcon.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resourcePlainIcon.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resourcePlainIconSmall.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\resourcesTimeGraphIcon.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\searchNext.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\searchPrev.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\securityIcons.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\securityIcons_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\smallIcons.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\smallIcons_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\speech.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\toolbarResizerVertical.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\touchCursor.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\touchCursor_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\treeoutlineTriangles.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\treeoutlineTriangles_2x.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\whatsnew.png" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\inspector.html" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\integration_test_runner.html" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\js_app.html" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\ndb_app.html" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\node_app.html" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\toolbox.html" />
+    <Content Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\worker_app.html" />
+    <Content Include=".local-chromium\Win64-706915\chrome-win\MEIPreload\manifest.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include=".local-chromium\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+   
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\chrome"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\chrome-wrapper"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\chrome_100_percent.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\chrome_200_percent.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\chrome_sandbox"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\icudtl.dat"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\libclearkeycdm.so"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\libEGL.so"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\libGLESv2.so"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\am.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\am.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ar.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ar.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\bg.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\bg.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\bn.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\bn.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ca.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ca.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\cs.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\cs.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\da.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\da.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\de.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\de.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\el.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\el.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\en-GB.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\en-GB.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\en-US.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\en-US.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\es-419.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\es-419.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\es.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\es.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\et.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\et.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\fa.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\fa.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\fi.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\fi.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\fil.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\fil.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\fr.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\fr.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\gu.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\gu.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\he.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\he.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\hi.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\hi.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\hr.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\hr.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\hu.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\hu.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\id.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\id.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\it.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\it.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ja.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ja.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\kn.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\kn.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ko.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ko.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\lt.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\lt.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\lv.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\lv.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ml.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ml.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\mr.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\mr.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ms.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ms.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\nb.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\nb.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\nl.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\nl.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\pl.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\pl.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\pt-BR.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\pt-BR.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\pt-PT.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\pt-PT.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ro.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ro.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ru.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ru.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sk.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sk.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sl.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sl.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sr.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sr.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sv.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sv.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sw.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\sw.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ta.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\ta.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\te.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\te.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\th.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\th.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\tr.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\tr.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\uk.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\uk.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\vi.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\vi.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\zh-CN.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\zh-CN.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\zh-TW.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\locales\zh-TW.pak.info"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\MEIPreload\preloaded_data.pb"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\nacl_helper"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\nacl_helper_bootstrap"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\nacl_helper_nonsfi"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\nacl_irt_x86_64.nexe"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\natives_blob.bin"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources.pak"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\.htaccess"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\accessibility\accessibility_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\accessibility\ARIAProperties.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\accessibility_test_runner\accessibility_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\animation\animation_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\application_test_runner\application_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\audits2\audits2_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\audits2_test_runner\audits2_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\audits2_worker.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\audits2_worker\audits2_worker_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\bindings_test_runner\bindings_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\browser_debugger\browser_debugger_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\changes\changes_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\cm\cm_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\cm_modes\cm_modes_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\color_picker\color_picker_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\console\console_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\console_test_runner\console_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\cookie_table\cookie_table_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\coverage\coverage_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\coverage_test_runner\coverage_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\cpu_profiler_test_runner\cpu_profiler_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\data_grid\data_grid_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\data_grid_test_runner\data_grid_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\devices\devices_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\device_mode_test_runner\device_mode_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\devtools_app.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\devtools_compatibility.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\devtools_extension_api.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\diff\diff_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\elements\elements_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\elements_test_runner\elements_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\emulated_devices_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\iPad-landscape.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\iPad-portrait.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\iPhone5-landscape.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\iPhone5-portrait.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\iPhone6-landscape.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\iPhone6-portrait.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\iPhone6Plus-landscape.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\iPhone6Plus-portrait.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\Nexus5X-landscape.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\Nexus5X-portrait.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\Nexus6P-landscape.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\emulated_devices\Nexus6P-portrait.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\event_listeners\event_listeners_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\extensions_test_runner\extensions_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\formatter\formatter_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\formatter_worker.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\har_importer\har_importer_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\heap_profiler_test_runner\heap_profiler_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\heap_snapshot_model\heap_snapshot_model_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\heap_snapshot_worker.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\heap_snapshot_worker\heap_snapshot_worker_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\help\help_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\accelerometer-back.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\accelerometer-front.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\audits_logo.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\ic_info_black_18dp.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Images\ic_warning_black_18dp.svg"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\inline_editor\inline_editor_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\inspector.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\InspectorBackendCommands.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\integration_test_runner.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\javascript_metadata\javascript_metadata_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\js_app.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\js_profiler\js_profiler_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\layers\layers_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\layers_test_runner\layers_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\layer_viewer\layer_viewer_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\ndb_app.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\network\network_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\network_test_runner\network_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\node_app.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\node_debugger\node_debugger_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\object_ui\object_ui_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\performance_monitor\performance_monitor_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\performance_test_runner\performance_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\perf_ui\perf_ui_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\product_registry_impl\product_registry_impl_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\profiler\profiler_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\protocol_monitor\protocol_monitor_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\quick_open\quick_open_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\resources\resources_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\sdk_test_runner\sdk_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\search\search_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\security\security_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\security_test_runner\security_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\settings\settings_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\shell.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\snippets\snippets_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\sources\sources_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\sources_test_runner\sources_test_runner_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\source_frame\source_frame_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\SupportedCSSProperties.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\terminal\terminal_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\Tests.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\text_editor\text_editor_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\timeline\timeline_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\timeline_model\timeline_model_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\toolbox.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\worker_app.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\resources\inspector\workspace_diff\workspace_diff_module.js"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\swiftshader\libEGL.so"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\swiftshader\libGLESv2.so"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\v8_context_snapshot.bin"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\xdg-mime"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+    <None Include=".local-chromium\Linux-706915\chrome-linux\xdg-settings"> <CopyToOutputDirectory>Always</CopyToOutputDirectory> </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+    <PackageReference Include="MySql.Data" Version="8.0.20" />
+    <PackageReference Include="PuppeteerSharp" Version="2.0.3" />
+    <PackageReference Include="dapper" Version="1.60.6" />
+  </ItemGroup>
+
+</Project>

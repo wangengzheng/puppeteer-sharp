@@ -1,0 +1,282 @@
+@using System.Text.RegularExpressions
+@using System.Text
+@using System.Security.Cryptography
+@using Microsoft.AspNetCore.Hosting
+@inject Microsoft.AspNetCore.Hosting.IHostingEnvironment hostEnvironment
+
+@model puppeteer_sharp.Models.Exercise.ExerciseModel
+@{
+    Layout = null;
+    var fontRegex = new Regex(".*font\\-size\\s*:\\s*(\\w+).*");
+
+    string ModifyContentWithImage(string str)
+    {
+        if (String.IsNullOrEmpty(str)) {
+            return str;
+        }
+
+        var imageRegex = new Regex("<img.*?src=\"(.*?)\"");
+
+        var matchCollection = imageRegex.Matches(str);
+
+        if (matchCollection.Count <= 0) {
+            return str;
+        }
+        Dictionary<string, string> dict = new Dictionary<string, string>();
+
+        for (int i = 0; i < matchCollection.Count; i++)
+        {
+            var value = matchCollection[i].Groups[1].Value;
+            if (value.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase) ||
+                value.StartsWith("https://", StringComparison.InvariantCultureIgnoreCase)
+                ) {
+                continue;
+            }
+
+            if (!dict.ContainsKey(value)) {
+                dict.Add(value, AddHashA(value));
+            }
+        }
+
+        foreach (var key in dict)
+        {
+            str = str.Replace(key.Key, key.Value);
+        }
+
+        return str;
+    }
+
+    string AddHashA(string url)
+    {
+        try
+        {
+            //由于前端上传附件到新借口 拿到相对路径自己拼接造成的
+            var oldOosUploadPath = UrlPrefix().TrimEnd('/') + "/k12oos/upload";
+
+            if (url.IndexOf(oldOosUploadPath, StringComparison.InvariantCultureIgnoreCase) != -1)
+            {
+                url = url.Split('?').FirstOrDefault()?.Replace(UrlPrefix(), "");
+            }
+
+
+            if (url.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase) ||
+      url.StartsWith("https://", StringComparison.InvariantCultureIgnoreCase)
+      )
+            {
+                return url;
+            }
+
+            if (url.IndexOf("k12oos/upload", StringComparison.InvariantCultureIgnoreCase) != -1)
+            {
+                return string.Concat(FileUrl().TrimEnd('/'), "/", url.TrimEnd('/'));
+            }
+
+
+            url = url.Replace("editor/image/", "").Replace("show/image/", "").Trim();
+            if (!url.StartsWith("/"))
+            {
+                url = "/" + url;
+            }
+
+            string tmp = UrlPrefix();
+            long tmpTimeOut = 3600;
+
+            var rand = new Random().Next(0, 1000000);
+            Uri uri = new Uri(UrlPrefix() + url);
+            string path = uri.AbsolutePath.Trim('/');
+
+            DateTime originTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            string timeStr = (Math.Floor((DateTime.UtcNow - originTime).TotalSeconds + tmpTimeOut)).ToString();
+
+            String hash = Md5(path + "-" + timeStr + "-" + rand
+                + "-" + "0" + "-" + PrivateKey());
+            return tmp + url + "?auth_key=" + timeStr + "-" + rand
+                    + "-" + "0" + "-" + hash + "&sc=clatea";
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            return url;
+        }
+    }
+
+    string PrivateKey()
+    {
+        return "scujnwny";
+    }
+
+    string UrlPrefix()
+    {
+        if (hostEnvironment.IsDevelopment())
+        {
+            return "http://vote.jxt189.com:9779";
+        }
+
+        return "http://image.jxt189.com";
+
+    }
+
+    string FileUrl()
+    {
+        if (hostEnvironment.IsDevelopment())
+        {
+            return "https://ktjx-bucket-alpha.oss-cn-shenzhen.aliyuncs.com";
+        }
+
+        return "https://ktjx-bucket.oss-cn-shenzhen.aliyuncs.com";
+    }
+
+
+    string Md5(string str)
+    {
+        var sb = new StringBuilder();
+        MD5 md5 = MD5.Create();
+
+        // 加密后是一个字节类型的数组，这里要注意编码UTF8/Unicode等的选择　
+        byte[] arr = md5.ComputeHash(Encoding.UTF8.GetBytes(str));
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            // 将得到的字符串使用十六进制类型格式。格式后的字符是小写的字母，如果使用大写（X）则格式后的字符是大写字符
+            string p = arr[i].ToString("x");
+            if (p.Length < 2)
+            {
+                p = "0" + p;
+            }
+            sb.Append(p);
+        }
+
+        return sb.ToString();
+    }
+
+}
+<!DOCTYPE html>
+@*
+    <!-- IoFZ90QPh4incEL0-Hts70 奇特的单选题-->
+    <!-- YzLlwaiEjN2i62MS8eystg 字体不同-->
+    k12-base\k12-base-web\src\main\java\com\nenglong\k12\controller\exercise\
+    k12-web\k12-web-baseapi\src\main\java\com\nenglong\k12\base\api\controller\ExerciseController.java
+    由于htmlHandler两边代码不一致导致 具体看 optionContent带标签渲染结果不同 具体id  "eX7Fm47Oisu9G0UpeeZ__M","IRd6srB6jJ6-wVFDtZTLH0"
+
+    <p><strong><span style=\"font-size:28px\"><span style=\"font-family:times new roman,times,serif\">Good evening!</span></span></strong></p>\n
+    需要放span里面 font-size
+*@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Id</title>
+    <style>
+        .container {
+            max-width: 400px
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .item {
+            display: flex;
+            flex-direction: column;            
+            padding: 8px;
+        }
+        .item img {
+            display: block;
+            width: 100%;
+        }
+        .space {
+        }
+    </style>
+</head>
+<body>
+    <div id="content" style="display: inline-block">
+        @Html.Raw(ModifyContentWithImage(Model.Question))
+        @if (Model.ExerciseOptions.Count() > 0)
+        {
+            if (Model.ExerciseTypeId == "lianxianti")
+            {
+                var left = Model.ExerciseOptions.Where(a => a.OrderBy.StartsWith("1-")).OrderBy(a=>a.OrderBy);
+                var right = Model.ExerciseOptions.Where(a => a.OrderBy.StartsWith("2-")).OrderBy(a => a.OrderBy);
+                var count = Math.Max(left.Count(), right.Count());
+
+
+                @for (int i = 0; i < count; i++)
+                {                  
+                    <div class="row">
+                        <div class="item">
+                            <span>@ModifyContentWithImage(left.ElementAtOrDefault(i)?.Content)</span>
+                            @if (!string.IsNullOrEmpty(left.ElementAtOrDefault(i)?.Image))
+                            {                                
+                                <img style="max-width:300px;max-height:300px;" src="@AddHashA(left.ElementAtOrDefault(i)?.Image)" alt="" />
+                            }
+                        </div>
+                        <div class="space"></div>
+                        <div class="item">
+                            <span>@ModifyContentWithImage(right.ElementAtOrDefault(i)?.Content)</span>
+                            @if (!string.IsNullOrEmpty(right.ElementAtOrDefault(i)?.Image))
+                            {                                 
+                                <img style="max-width:300px;max-height:300px;" src="@AddHashA(right.ElementAtOrDefault(i)?.Image)" alt="" />
+                            }                            
+                        </div>
+                    </div>
+                }
+
+                return;
+            }
+
+            foreach (var option in Model.ExerciseOptions)
+            {
+                if (Model.Question.IndexOf("class=\"shijuItem\"",
+                    StringComparison.InvariantCultureIgnoreCase) != -1) {
+                    break;
+                }
+                if (string.IsNullOrEmpty(option.Content)) {
+                    continue;
+                }
+
+                option.Content = ModifyContentWithImage(option.Content);
+                var optionMatch = fontRegex.Match(option.Content);
+                if (optionMatch.Success)
+                {
+                    @if (option.Content.IndexOf("<p>", StringComparison.InvariantCultureIgnoreCase) != -1)
+                    {
+                        @Html.Raw(
+                            string.Concat(
+                                option.Content.Substring(0, 3),
+                                $"<span style=\"font-size:{optionMatch.Groups[1].Value}\">{option.OrderBy}.</span>",
+                                option.Content.Substring(3)
+                            )
+                        )
+                    }
+                    else
+                    {
+                        // <p>@(option.OrderBy).@option.Content)</p>
+
+                        <p><span style="font-size:@(optionMatch.Groups[1].Value)">@(option.OrderBy).@(Html.Raw(option.Content))</span></p>
+                    }
+
+                }
+                else
+                {
+                    @if (option.Content.IndexOf("<p>", StringComparison.InvariantCultureIgnoreCase) != -1)
+                    {
+                        @Html.Raw(string.Concat(
+                            option.Content.Substring(0, 3),
+                            option.OrderBy,
+                            ".",
+                            option.Content.Substring(3)
+                        ))
+                    }
+                    else
+                    {
+                        <p>@(option.OrderBy).@option.Content</p>
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(option.Image))
+                {
+                    <img style="max-width:300px;max-width:300px" src="@AddHashA(option.Image)" />
+                }               
+            }
+        }
+    </div>
+</body>
+</html>
